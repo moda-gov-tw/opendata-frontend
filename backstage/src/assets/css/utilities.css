@@ -1,0 +1,162 @@
+/*************************
+  H series
+*************************/
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.125rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+h6 {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+
+/*************************
+  Links
+*************************/
+
+a {
+  color: var(--el-color-primary);
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 1;
+  }
+}
+
+
+/*************************
+  A11y
+*************************/
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+/*************************
+  flex
+*************************/
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+
+/*************************
+  article structure
+*************************/
+
+p {
+  margin-bottom: 1rem;
+  color: var(--el-text-color-regular);
+}
+
+.text-hint {
+  color:  var(--el-text-color-regular);
+  font-size: 0.75rem;
+}
+
+table {
+  width: 100%;
+  @media screen and (width <= 768px) {
+    display: block;
+  }
+  & tr {
+    &:nth-child(2n) {
+      background-color: var(--el-fill-color-lighter);
+    } 
+    @media screen and (width <= 768px) {
+      display: block;
+    }
+  }
+  & td {
+    padding: 1rem;
+    @media screen and (width <= 768px) {
+      display: block;
+    }
+  }
+  & th {
+    padding: 1rem;
+    @media screen and (width <= 768px) {
+      display: block;
+      padding-bottom: 0;
+    }
+  }
+  & table {
+    @media screen and (width <= 768px) {
+      padding: 0 1rem;
+    }
+    & tr {
+      &:first-child {
+        & td,
+        & th {
+          padding-top: 0;
+          @media screen and (width <= 768px) {
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+    & td {
+      padding-left: 0;
+    }
+    & th {
+      padding-left: 0;
+    }
+  }
+  
+}
+
+
+/*************************
+  align
+*************************/
+
+.align-center {
+  text-align: center;
+}
