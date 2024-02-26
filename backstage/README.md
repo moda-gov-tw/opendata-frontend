@@ -47,7 +47,7 @@ public - 放置公開的靜態資源，如favicon.ico
 
 ## License
 
-This project is licensed under the [MIT](https://gitlab.blueplanet.com.tw/RD/moda-opensource/-/blob/main/backstage/LICENSE) License - see the LICENSE.md file for details
+This project is licensed under the [MIT](https://github.com/moda-gov-tw/opendata-frontend/blob/main/backstage/LICENSE) License - see the LICENSE.md file for details
 
 本專案有使用到的套件:
 | Name | License | Description |

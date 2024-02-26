@@ -60,7 +60,7 @@ server - 放置於 nuxt 伺服器端的程式碼
 
 ## License
 
-本專案使用了 [MIT](https://gitlab.blueplanet.com.tw/RD/moda-opensource/-/blob/main/frontstage/LICENSE) License
+本專案使用了 [MIT](https://github.com/moda-gov-tw/opendata-frontend/blob/main/frontstage/LICENSE) License
 
 本專案有使用到的套件:
 | Name | License | Description |
