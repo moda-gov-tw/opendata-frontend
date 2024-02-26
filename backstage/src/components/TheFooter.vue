@@ -1,6 +1,6 @@
 <template>
   <footer>
-    2023@copyright
+    2024@copyright
   </footer>
 </template>
 
