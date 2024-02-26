@@ -1,0 +1,38 @@
+{
+  "name": "moda_od_frontstage_template",
+  "version": "0.0.1",
+  "description": "Moda OD Frontstage Template",
+  "author": "Ministry of Digital Affairs",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .ts,.js,.vue ."
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.0.6",
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@types/node": "^20",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.8.0",
+    "prettier": "^3.0.3",
+    "vue": "^3.3.7",
+    "vue-router": "^4.2.5",
+    "vue-tsc": "^1.8.19"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "chart.js": "^4.4.0",
+    "pinia": "^2.1.7",
+    "vuewordcloud": "^19.0.0"
+  }
+}
