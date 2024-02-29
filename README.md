@@ -1,10 +1,10 @@
-# 政府資料開放平臺前台前端
+# 政府資料開放平臺前端
 
 [![image](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://opensource.org/licenses/MIT) [![image](https://img.shields.io/badge/node.js-v20.x-green.svg)](https://nodejs.org/en) [![image](https://img.shields.io/badge/Vue-3.x-green.svg)](https://vuejs.org/) [![image](https://img.shields.io/badge/Nuxt-3.x-green.svg)](https://nuxtjs.org)
 
 ## 簡介
 
-本專案為[政府資料開放平臺](https://data.gov.tw)的前台的開源程式碼，本專案開源的目的在於提供政府機關或民間團體，作為開發政府資料開放平臺前台的參考，並歡迎各界參與開發，一起為開放資料盡一份心力。
+本專案為[政府資料開放平臺](https://data.gov.tw)前端開源，透過開源程式提供政府機關或民間團體，作為發展資料開放平臺應用的參考，共同為政府開放資料盡一份心力。
 
 本平臺採用 [Vue.js](https://vuejs.org/) 框架開發，使用了 [Nuxt.js](https://nuxtjs.org/) 框架進行 SSR(Server Side Rendering) 的開發，開發語言則使用了 [TypeScript](https://www.typescriptlang.org/)，並以 [element-plus](https://element-plus.org/) 作為UI框架，另外，也通過了無障礙網路空間服務網的 (Accessibility) 的 Freego 測試。
 
