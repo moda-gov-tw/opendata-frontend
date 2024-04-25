@@ -1,0 +1,160 @@
+/*************************
+  Custom Element Plus
+*************************/
+
+:root {
+  --el-font-size-extra-large: 1.25rem;
+  --el-font-size-large: 1.125rem;
+  --el-font-size-medium: 1rem;
+  --el-font-size-base: 0.875rem;
+  --el-font-size-small: 0.8125rem;
+  --el-font-size-extra-small: 0.75rem;
+
+  --el-color-primary: #0071AB;
+  --el-color-primary-light-3: #3394C5;
+  --el-color-primary-dark-2: #00699e;
+
+  --el-color-success: #417b24;
+  --el-color-success-light-3: #448025;
+  --el-color-success-dark-2: #325f1b;
+
+  --el-font-family: var(--font-family);
+}
+
+.el-button {
+  --el-button-outline-color: var(--el-color-primary);
+  &:focus-visible {
+    outline: 2px dashed var(--el-button-outline-color);
+  }
+  &:focus {
+    & svg {
+      & path {
+        fill: var(--el-button-hover-text-color);
+      }
+    }
+  }
+  &:hover {
+    & svg {
+      & path {
+        fill: var(--el-button-hover-text-color);
+      }
+    }
+  }
+  & svg {
+    & path {
+      fill: var(--el-button-text-color);
+    }
+  }
+  &.btn-filter-mobile-control {
+    display: none;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    @media screen and (width <= 992px){
+      display: block;
+    }
+  }
+}
+
+.el-empty__description p {
+  color: var(--el-text-color-regular);
+}
+
+.el-collapse-item__header {
+  --el-collapse-header-font-size: 1rem;
+}
+
+.el-collapse-item__content {
+  --el-collapse-content-font-size: 1rem;
+}
+
+.searchbar {
+  & .el-input__wrapper {
+    --el-input-border-radius: var(--el-border-radius-base) 0 0 var(--el-border-radius-base);
+    text-align: left;
+  }
+
+  & .searchbar-submit-btn {
+    border-radius: 0 var(--el-border-radius-base) var(--el-border-radius-base) 0;
+    width: 100%;
+    & svg {
+      & path {
+        fill: var(--el-color-white);
+      }
+    }
+  }
+}
+
+.el-tag.el-tag--info.el-tag--light {
+  color: var(--el-text-color-regular);
+}
+
+.el-table {
+  font-size: 0.875rem;
+  & th {
+    .cell {
+      color: var(--el-text-color-primary);
+    }
+  }
+}
+
+.el-radio {
+  margin-right: 1rem;
+}
+
+.el-tree__empty-text {
+  color: var(--el-text-color-regular);
+}
+
+.el-dialog {
+  --el-dialog-width: 100%;
+  max-width: 60dvw;
+}
+
+.el-dialog__body {
+  --el-dialog-content-font-size: 1rem;
+}
+
+.el-checkbox__label {
+  font-size: 1rem;
+}
+
+.el-drawer__header {
+  padding-bottom: 1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.el-drawer {
+  @media screen and (width <= 768px){
+    width: 80dvw!important;
+  }
+}
+
+.btn-book {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  right: calc((100vw - 1280px) / 2 - 16px);
+  bottom: -30px;
+  text-align: center;
+  padding: 0;
+  font-size: 0.75rem;
+  &>span {
+    flex-direction: column;
+    & svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-bottom: 5px;
+    }
+  }
+  @media screen and (width <= 1280px) {
+    right: 60px;
+  }
+  @media screen and (width <= 992px) {
+    right: 32px;
+  }
+}
+
+.el-form-item__label {
+  --el-form-label-font-size: 1rem;
+}
