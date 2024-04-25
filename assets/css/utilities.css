@@ -1,0 +1,200 @@
+/*************************
+  h series
+*************************/
+
+.text-align-center {
+  text-align: center;
+}
+
+
+/*************************
+  h series
+*************************/
+
+h2 {
+  font-size: calc(1rem * 1.75);
+}
+
+h3 {
+  font-size: calc(1rem* 1.5);
+  line-height: calc(1rem * 1.5 * 1.5);
+}
+
+/*************************
+  Link
+*************************/
+
+a {
+  color: var(--el-color-primary);
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus-visible {
+    outline: 2px dashed var(--el-color-primary);
+  }
+  &.el-button {
+    color: var(--el-color-white);
+  }
+
+  .spotlight-box & {
+    color: var(--el-color-primary-dark-2);
+  }
+}
+
+
+/*************************
+  A11y
+*************************/
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+/*************************
+  Social Media Colors
+*************************/
+
+.facebook {
+  color: #4367B2;
+  & path {
+    fill: #4367B2;
+  }
+}
+
+.twitter {
+  color: #000;
+  & path {
+    fill: #000;
+  }
+}
+
+.facebook-bg {
+  background-color: #4367B2;
+  & path {
+    fill: var(--el-color-white);
+  }
+}
+
+.twitter-bg {
+  background-color: #000;
+  & path {
+    fill: var(--el-color-white);
+  }
+}
+
+.google {
+  color: #356fcf;
+  & path {
+    fill: #356fcf;
+  }
+}
+
+
+.google-bg {
+  background-color: #356fcf;
+  & path {
+    fill: var(--el-color-white);
+  }
+}
+
+/*************************
+  article, section
+*************************/
+
+section {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  &.section-bg {
+    background-color: var(--spotlight-box-bg);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+
+/*************************
+  text color
+*************************/
+
+.color-primary {
+  color: var(--el-color-primary);
+}
+
+.color-danger {
+  color: var(--el-color-danger);
+}
+
+.color-info {
+  color: var(--el-color-info);
+}
+
+.color-warning {
+  color: var(--el-color-warning);
+}
+
+.color-warning-dark {
+  color: var(--el-color-warning-dark-2);
+}
+
+.color-success {
+  color: var(--el-color-success);
+}
+
+
+/*************************
+  Table
+*************************/
+
+table {
+  width: 100%;
+}
+
+/*************************
+  CSS Table
+*************************/
+
+.table {
+  display: table;
+  width: 100%;
+  &.table--fixed {
+    table-layout: fixed;
+  }
+  @media screen and (width <= 576px){
+    display: block;
+  }
+}
+
+.table-row {
+  display: table-row;
+  @media screen and (width <= 576px){
+    display: block;
+  }
+}
+
+.table-cell {
+  display: table-cell;
+  line-height: 1.5;
+  @media screen and (width <= 576px){
+    display: block;
+  }
+  &.th {
+    background: var(--spotlight-box-bg);
+  }
+  &:is(.th, .td){
+    vertical-align: top;
+  }
+}
+
+

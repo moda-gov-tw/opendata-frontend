@@ -1,0 +1,4 @@
+{
+  // This is default setting, you can find .nuxt document on https://nuxt.com/docs/guide/directory-structure/nuxt
+  "extends": "./.nuxt/tsconfig.json"
+}

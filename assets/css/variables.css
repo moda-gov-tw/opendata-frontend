@@ -1,0 +1,96 @@
+
+:root {
+  --font-family: 'Noto Sans TC', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  --font-size: 1.125rem;
+
+  /* Header */
+  --header-bg: var(--el-color-white);
+
+  /* Banner */
+  --banner-height: 300px;
+  --banner-mobile-height: 160px;
+
+  --spotlight-box-bg: #E9EDF2;
+
+  /* Footer */
+  --footer-bg: #404050;
+
+  /* Breakpoint: follow elementPlus https://element-plus.org/en-US/component/layout.html#utility-classes-for-hiding-elements  */
+  /* 576, 768, 992, 1280, 1920 */
+
+  --color-traffic-1: #FFC42E;
+  --color-traffic-2: #EFB72B;
+  --color-traffic-3: #FFEBB9;
+  --color-traffic-4: #F9E0A2;
+  --color-traffic-5: #F09518;
+  --color-traffic-6: #FFE49E;
+  --color-traffic-7: #F0CE75;
+  --color-traffic-8: #FFD45E;
+  --color-traffic-9: #FFE9B1;
+  --color-traffic-10: #FFEFC7;
+  --color-traffic-11: #FFFBFB;
+  --color-traffic-12: #CAAE48;
+  --color-traffic-13: #FEFDF8;
+
+  --color-disaster-1: #ECAEAE;
+  --color-disaster-2: #FF4848;
+  --color-disaster-3: #F54129;
+  --color-disaster-4: #E2A1A1;
+  --color-disaster-5: #C06464;
+  --color-disaster-6: #FFCCCC;
+  --color-disaster-7: #C82E2E;
+  --color-disaster-8: #EFC3AA;
+  --color-disaster-9: #F53C11;
+  --color-disaster-10: #FEE3DF;
+  --color-disaster-11: #F2A992;
+  --color-disaster-12: #FCCACA;
+  --color-disaster-13: #FF7C60;
+
+  --color-health-1: #00CDCC;
+  --color-health-2: #CFF5F9;
+  --color-health-3: #67FFFE;
+  --color-health-4: #A8E5E5;
+  --color-health-5: #2BC5C4;
+  --color-health-6: #BFEBEB;
+  --color-health-7: #C3FDFD;
+  --color-health-8: #7CC6CE;
+  --color-health-9: #A7D9D9;
+  --color-health-10: #B3F0F0;
+  --color-health-11: #B8F6F6;
+  --color-health-12: #DED1C0;
+  --color-health-13: #EDE3D9;
+
+  --color-social-1: #FF9696;
+  --color-social-2: #FCC3C3;
+  --color-social-3: #FFCFCF;
+  --color-social-4: #F58D8D;
+  --color-social-5: #EACCCC;
+  --color-social-6: #D97474;
+  --color-social-7: #B04F4F;
+  --color-social-8: #E65645;
+  --color-social-9: #FFD3D3;
+  --color-social-10: #FFE0E0;
+  --color-social-11: #FF9696;
+
+  --color-energy-1: #6AB469;
+  --color-energy-2: #B0D7AF;
+  --color-energy-3: #C8E2C8;
+  --color-energy-4: #469600;
+  --color-energy-5: #DCF3DB;
+  --color-energy-6: #D4E8D4;
+  --color-energy-7: #9CC59C;
+
+  --color-climate-1: #579AFF;
+  --color-climate-2: #6399EA;
+  --color-climate-3: #ACCDFF;
+  --color-climate-4: #E0EDFF;
+  --color-climate-5: #3B71C3;
+  --color-climate-6: #AAC9F9;
+  --color-climate-7: #4385EA;
+  --color-climate-8: #6897DC;
+  --color-climate-9: #75ACFF;
+  --color-climate-10: #9BC0F7;
+  --color-climate-11: #AFCFFF;
+  --color-climate-12: #B5D1FB;
+}
+
