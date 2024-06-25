@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.6",
-    "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@types/node": "^20",
@@ -34,5 +33,8 @@
     "chart.js": "^4.4.0",
     "pinia": "^2.1.7",
     "vuewordcloud": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
