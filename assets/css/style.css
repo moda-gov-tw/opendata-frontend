@@ -4,8 +4,6 @@
 
 @import url(@/assets/css/variables.css);
 
-@layer reset, ui, vendor, variations, components, utilities, print;
-
 @import url(@/assets/css/reset.css) layer(reset);
 
 @import url(@/assets/css/ui.css) layer(ui); /* layouts and pages*/
@@ -22,3 +20,4 @@
 @import url(@/assets/css/print.css) layer(print);
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+@layer reset, ui, vendor, variations, components, utilities, print;
