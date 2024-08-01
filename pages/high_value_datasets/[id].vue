@@ -268,27 +268,7 @@
           <div class="left">
             <div class="title-with-line">文字雲</div>
             <div class="cloud-box">
-              <vue-word-cloud
-                style="width: 80%; height: 360px; margin: 0 auto"
-                :words="[
-                  ['政府統計', 1000],
-                  ['政府支出', 700],
-                  ['政府預算', 300],
-                  ['主計', 3]
-                ]"
-                :spacing="2"
-                :font-size-ratio="2"
-              >
-                <template #default="{ text }">
-                  <button
-                    :class="['btn-cloud']"
-                    :title="`前往搜尋有關關鍵字 ${text} 的資料集`"
-                    @click="onWordClick(text)"
-                  >
-                    <span>{{ text }}</span>
-                  </button>
-                </template>
-              </vue-word-cloud>
+              <div id="word_cloud" ref="canvas" class="statistics-wordcloud"></div>
             </div>
           </div>
           <div class="right">
@@ -307,13 +287,15 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtApp } from '#app'
 import zhTW from 'element-plus/es/locale/lang/zh-tw'
 import { Chart, registerables } from 'chart.js'
 const runtimeConfig = useRuntimeConfig()
 const pageTitle = ref('')
 const pageDescription = ref('')
 const route = useRoute()
-const { VueWordCloud } = useWordCloud()
+const { $wordcloud }: any = useNuxtApp()
+const canvas = ref(null)
 
 useHead({
   title: computed(() => '高應用價值主題專區：' + pageTitle.value),
@@ -358,7 +340,7 @@ useHead({
 
 Chart.register(...registerables)
 const valueChart = ref<HTMLCanvasElement | null>(null)
-
+const { isRadio, addThScope } = useJSAccessibility()
 onMounted(() => {
   if (valueChart.value) {
     const ctx = valueChart.value.getContext('2d') as CanvasRenderingContext2D
@@ -404,6 +386,21 @@ onMounted(() => {
       }
     })
   }
+  document.getElementById('word_cloud')!.addEventListener('wordcloudstop', () => {
+    const word = document.getElementsByClassName('custom-class')
+    for (let i = 0; i < word.length; i++) {
+      word[i].setAttribute('tabindex', '0')
+      word[i].addEventListener('keyup', (event: any) => {
+        if (event.keyCode === 13) {
+          const text = word[i].textContent
+          navigateTo('/datasets/search?rtt=' + text)
+        }
+      })
+    }
+  })
+  render()
+  isRadio()
+  addThScope()
 })
 
 const pageData = ref([
@@ -711,13 +708,49 @@ const relApp = ref([
     imgPath: '/images/logo-icon.png'
   }
 ])
-
-const onWordClick = (text: string) => {
-  navigateTo('/datasets/search?q=' + text)
+const tags = [
+  ['政府統計', 10],
+  ['政府支出', 4],
+  ['政府預算', 6],
+  ['主計', 3]
+]
+const render = (wordSize: number = 10) => {
+  $wordcloud(document.getElementById('word_cloud'), {
+    list: tags,
+    gridSize: 24,
+    weightFactor: wordSize,
+    fontFamily: 'Noto Sans TC',
+    rotateRatio: 0,
+    classes: 'custom-class',
+    color: () => {
+      const ind = customCrypt()
+      return ['#E51010', '#A26A15', '#0079B7', '#068415'][ind]
+    },
+    click: (item: any) => {
+      navigateTo('/datasets/search?rtt=' + item[0])
+    },
+    hover: (item: any) => {
+      if (item !== undefined) {
+        document.body.style.cursor = 'pointer'
+        document.getElementById('word_cloud')!.title = `移至資料集列表，關鍵字: ${item[0]}`
+      } else {
+        document.body.style.cursor = 'default'
+      }
+    }
+  })
 }
-const { isRadio, addThScope } = useJSAccessibility()
-onMounted(() => {
-  isRadio()
-  addThScope()
-})
+const customCrypt = () => {
+  const crypto = window.crypto || (window as any).msCrypto
+  const array = new Uint32Array(1)
+  crypto.getRandomValues(array) // Compliant for security-sensitive use cases
+  return array[0] % 4
+}
 </script>
+<style>
+.statistics-wordcloud {
+  width: 80%;
+  height: 360px;
+  margin: 0 auto;
+  background-color: #e9edf2 !important;
+}
+</style>

@@ -25,7 +25,8 @@ const config = {
 
   elementPlus: {
     importStyle: false // using css @import for custom
-  }
+  },
+  plugins: ['~/plugins/wordcloud.client.js']
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config

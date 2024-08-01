@@ -5,41 +5,8 @@
       <h2>{{ pageTitle }}</h2>
       <el-divider />
       <section>
-        <div class="cloud-box">
-          <vue-word-cloud
-            style="width: 80%; height: 360px; margin: 0 auto"
-            :words="[
-              ['政府統計', 1000],
-              ['政府支出', 700],
-              ['政府預算', 300],
-              ['主計', 3]
-            ]"
-            :spacing="2"
-            :font-size-ratio="2"
-          >
-            <template #default="{ text, weight, word }">
-              <button
-                :class="[
-                  'btn-cloud',
-                  weight >= 800
-                    ? 'level1'
-                    : weight >= 600 && weight < 800
-                    ? 'level2'
-                    : weight >= 400 && weight < 600
-                    ? 'level3'
-                    : weight >= 200 && weight < 400
-                    ? 'level4'
-                    : weight < 200
-                    ? 'level5'
-                    : ''
-                ]"
-                :title="`前往搜尋有關關鍵字 ${text} 的資料集`"
-                @click="onWordClick(text)"
-              >
-                <span>{{ text }}</span>
-              </button>
-            </template>
-          </vue-word-cloud>
+        <div id="word_cloud__box" class="cloud-box">
+          <div id="word_cloud" ref="canvas" style="width: 80%; height: 360px; margin: 0 auto"></div>
         </div>
       </section>
     </div>
@@ -47,11 +14,13 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtApp } from '#app'
 const runtimeConfig = useRuntimeConfig()
 const pageTitle = ref('標籤雲')
 const pageDescription = ref('標籤雲')
 const route = useRoute()
-const { VueWordCloud } = useWordCloud()
+const { $wordcloud }: any = useNuxtApp()
+const canvas = ref(null)
 
 useHead({
   title: pageTitle,
@@ -90,7 +59,57 @@ useHead({
   ]
 })
 
-const onWordClick = (text: string) => {
-  navigateTo('/datasets/search?q=' + text)
+const tags = [
+  ['政府統計', 12],
+  ['政府支出', 6],
+  ['政府預算', 8],
+  ['主計', 3]
+]
+onMounted(() => {
+  document.getElementById('word_cloud')!.addEventListener('wordcloudstop', () => {
+    const word = document.getElementsByClassName('custom-class')
+    for (let i = 0; i < word.length; i++) {
+      word[i].setAttribute('tabindex', '0')
+      word[i].addEventListener('keyup', (event: any) => {
+        if (event.keyCode === 13) {
+          const text = word[i].textContent
+          navigateTo('/datasets/search?rtt=' + text)
+        }
+      })
+    }
+  })
+  render()
+})
+const render = (wordSize: number = 10) => {
+  $wordcloud(document.getElementById('word_cloud'), {
+    list: tags,
+    gridSize: 24,
+    weightFactor: wordSize,
+    fontFamily: 'Noto Sans TC',
+    rotateRatio: 0,
+    classes: 'custom-class',
+    color: () => {
+      const ind = customCrypt()
+      return ['#E51010', '#A26A15', '#0079B7', '#068415'][ind]
+    },
+    click: (item: any) => {
+      navigateTo('/datasets/search?rtt=' + item[0])
+    },
+    hover: (item: any) => {
+      if (item !== undefined) {
+        document.body.style.cursor = 'pointer'
+        document.getElementById('word_cloud')!.title = `移至資料集列表，關鍵字: ${item[0]}`
+      } else {
+        document.body.style.cursor = 'default'
+      }
+    }
+  })
+}
+
+const customCrypt = () => {
+  const crypto = window.crypto || (window as any).msCrypto
+  const array = new Uint32Array(1)
+  crypto.getRandomValues(array) // Compliant for security-sensitive use cases
+  return array[0] % 4
 }
 </script>

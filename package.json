@@ -32,7 +32,7 @@
     "@pinia/nuxt": "^0.5.1",
     "chart.js": "^4.4.0",
     "pinia": "^2.1.7",
-    "vuewordcloud": "^19.0.0"
+    "wordcloud": "^1.2.2"
   },
   "engines": {
     "node": ">=18.0.0"
